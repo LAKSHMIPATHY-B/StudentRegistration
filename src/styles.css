@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import url("../node_modules/bootstrap/dist/css/bootstrap.css"); */
+
+html, body { 
+  height: 100%; 
+  
+  background-image: url('./assets/images/stud-log.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

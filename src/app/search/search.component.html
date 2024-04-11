@@ -1,0 +1,38 @@
+<div class="container-md d-flex">
+  <div>
+<div class="table table-hover mt-5" *ngIf="users.length">
+  <thead class="text-center fs-6"> 
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody class="text-center fs-6">
+     <tr *ngFor="let user of users; let i = index;">
+      <td>{{i+1}}</td>
+      <td>{{user.fName}}</td>
+      <td>{{user.lName}}</td>
+      <td>{{user.phone}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.pswd}}</td>
+      <td>
+        <button mat-icon-button (click)="Update(user)">
+          <mat-icon class="text-success">edit</mat-icon>
+        </button>        
+      </td>
+      <td>
+        <button mat-icon-button (click)="Delete(user)">
+          <mat-icon class="text-danger">delete</mat-icon>
+        </button>
+      </td>
+     </tr>
+  </tbody>
+</div>
+</div>
+</div>

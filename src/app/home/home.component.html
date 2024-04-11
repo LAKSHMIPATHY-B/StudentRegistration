@@ -1,0 +1,54 @@
+
+<div class="container-md mt-5 d-flex">
+  <div class="form p-4" [formGroup]="user">
+    <div class="text-center h3 mb-4">Sign In</div>
+    <div class="mb-3">
+      <!-- <label for="user" class="form-label">UserName</label> -->
+      <mat-form-field >
+      <input type="text" name="firstName" placeholder="First Name" formControlName="fName" matInput />
+    </mat-form-field>
+    <mat-error *ngIf="fname.errors?.['required'] && fname.touched">First Name is required</mat-error>
+    <mat-error *ngIf="fname.errors?.['minlength'] && fname.touched">First Name containes minimum 3 letters</mat-error>
+    <mat-error *ngIf="fname.errors?.['pattern'] && fname.touched">Enter Letters Only</mat-error>
+    <mat-error *ngIf="fname.errors?.['nullValidator'] && fname.touched">Fill this field</mat-error>
+    </div>
+    <div class="mb-3">
+      <mat-form-field>
+      <input type="text" name="lastName" placeholder="Last Name" formControlName="lName" matInput required/>
+      </mat-form-field>
+      <mat-error *ngIf="lname.errors?.['required'] && lname.touched">Last Name is required</mat-error>
+      <mat-error *ngIf="lname.errors?.['pattern'] && lname.touched">Last Name Only letters</mat-error>
+    </div>
+    <div class="mb-3">
+      <mat-form-field>
+      <input type="text" name="phone"  maxLength="10" placeholder="Phone Number" formControlName="phone" matInput required maxlength="10" autocomplete="phone"/>
+      </mat-form-field>
+      <mat-error *ngIf="phone.errors?.['required'] && phone.touched">Phone  number is required.</mat-error>
+      <mat-error *ngIf="phone.errors?.['minlength'] && phone.touched">Enter your 10 Digit Phone number.</mat-error>
+      <mat-error *ngIf="phone.errors?.['maxlength'] && phone.touched">Enter your 10 Digit Phone number.</mat-error>
+    </div>
+    
+    <div class="mb-3">
+      <mat-form-field>
+      <input type="email" name="email"  placeholder="Email Id" formControlName="email" matInput required autocomplete="email"/>
+      </mat-form-field>
+      <mat-error *ngIf="email.errors?.['required'] && email.touched">Email is required</mat-error>
+      <mat-error *ngIf="email.errors?.['pattern'] && email.touched">Enter your Email correctly.</mat-error>
+    </div>
+
+    <div class="mb-3">
+      <mat-form-field>
+      <input type="password" name="password" placeholder="Enter Password" formControlName="pswd" matInput required/>
+      </mat-form-field>
+      <mat-error *ngIf="pswd.errors?.['required'] && pswd.touched">Password is required</mat-error>
+      <mat-error *ngIf="pswd.errors?.['minlength'] && pswd.touched">Enter Minimum 6 Charecters</mat-error>
+    </div>
+    <div class="mb-3">
+      <button type="button" mat-raised-button color="primary" class="btns" (click)="Submit()" [disabled]="!user.valid">{{!btn?'Submit':'Update'}}</button>
+    </div>
+ 
+  </div>
+  </div>
+
+  <!-- <app-search></app-search> -->
+  

@@ -1,0 +1,10 @@
+.rout{
+  cursor: pointer;
+}
+nav{
+  user-select: none;
+}
+.space{
+
+  flex: 1 1 auto;
+}

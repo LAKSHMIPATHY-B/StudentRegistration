@@ -1,0 +1,27 @@
+.container-md {
+  user-select: none;
+  justify-content: center;
+}
+
+.form {
+  width: 500px;
+  transition: .5s;
+}
+
+.form:hover {
+  box-shadow: 3px 4px 5px gray;
+  border-radius: 5px;
+  backdrop-filter: blur(4px);
+}
+
+.btns {
+  transition: 0.3S all ease-in-out;
+}
+
+mat-form-field {
+  width: 400px;
+}
+
+.btns:hover {
+  transform: translateY(0.25rem);
+}
